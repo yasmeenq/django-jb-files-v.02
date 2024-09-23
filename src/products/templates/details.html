@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% load static %} 
+{% block title %}Gaming | Details{% endblock title %}
+
+{% block content  %}
+    <h3 class="spacing">Product Details</h3>
+
+    <div class="card w-25 mx-auto">
+        <h4>Name: {{product.name}}</h4>
+        <h4>Price: {{product.price}}</h4>
+        <h4>Stock: {{product.stock}}</h4>
+        <h4>Category: {{product.category.name}}</h4>
+        <h4>Release Date: {{product.release_date}}</h4>
+    </div>
+    </br></br>
+    <a class="back"  href="{% url 'products_route'%}">Back</a>
+    <a class="back" href="{% url 'edit_route' product.id %}">🛠</a>
+    <a onclick="confirmDelete(event)" class="back" href="{% url 'delete_route' product.id %}">🗑</a>
+
+
+{% endblock content %}

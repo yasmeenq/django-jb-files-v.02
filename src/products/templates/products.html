@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% load static %} 
+
+{% block title %}Gaming | Products{% endblock title %}
+
+{% block content %}
+    <h2>All Products:</h2>
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td>name</td>
+                <td>price</td>
+                <td>stock</td>
+                <td>category</td>
+                <td>release date</td>
+                <td>Details</td>
+            </tr>
+            </thead>
+        <tbody>
+            {% for p in products %}
+                <tr>
+                    <td>{{p.name}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.stock}}</td>
+                    <td>{{p.category.name}}</td>
+                    <td>{{p.release_date}}</td>
+                    <td><a href="{% url 'details_route' p.id %}">👁</a>
+                        <span>|</span>
+                        <a href="{% url 'edit_route' p.id %}">🛠</a>
+                        <span>|</span>
+                        <a onclick="confirmDelete(event)" href="{% url 'delete_route' p.id %}">🗑</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock content %}

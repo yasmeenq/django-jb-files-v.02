@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% load static %} 
+
+{% block title %}Gaming | Categories{% endblock title %}
+
+{% block content %}
+    <h2>Categories:</h2>
+
+    <a href="{% url 'insertCategory_route' %}" style="color:white">➕ Add New Category</a>
+    <br><br>
+    <div class="card w-25 mx-auto categories">
+        <ul>
+            {% for c in categories %}
+                <li>{{c.name}}                        
+                    <a href="{% url 'editCategory_route' c.id %}">🛠</a>
+                    <span>|</span>
+                    <a onclick="confirmDelete(event)" href="{% url 'deleteCategory_route' c.id %}">🗑</a>
+                </li>
+                
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock content %}

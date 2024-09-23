@@ -1,0 +1,62 @@
+html, body{
+    height: 100%;
+    text-align: center;
+    background: linear-gradient(45deg,red, grey, pink);
+}
+
+.layout{
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.layout, nav, main{
+    border: 1px solid black;
+}
+
+.navbar{
+    height: 100%;
+}
+
+.active{
+    font-weight: bold;
+    font-family: 'Lucida Handwriting';
+    color:red !important;
+}
+
+.spacing{
+    margin-top:  50px !important;
+}
+
+.categories{
+    text-align: left;
+    padding: 20px;
+}
+.fancy-form{
+    width: 300px;
+    margin:20px auto;
+    border:1px solid black; 
+    padding: 10px;
+    border-radius: 20px;
+    text-align: left;
+
+}
+.fancy-form input, .fancy-form select{
+    margin-bottom: 20px;
+}
+.back{
+    border-radius: 20px !important;
+    padding:20px;
+    border:2px solid white !important;
+    color:black !important;
+
+}
+.back:hover{
+    color:wheat !important;
+    background: black !important;
+    
+}
+.errorlist{
+    color: white;
+    background-color: red;
+}
